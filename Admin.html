@@ -329,10 +329,7 @@ fetch('http://localhost:3000/checkDetails', {
       if (response.redirected) {
 
         window.location.href = './Home1.html';
-      } else {
-        // Handle other responses
-        // ...
-      }
+      } 
     })
     .catch((error) => {
       console.error('Failed to sign out:', error);
