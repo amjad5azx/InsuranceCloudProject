@@ -51,7 +51,7 @@
 <label id="paid_amount"></label>
 <br />
 <hr />
-<button class="btn btn-success" id="SignOut" type="button">Sign Out</button>
+<button class="btn btn-success" id="SignOut" onclick="signOut()" type="button">Sign Out</button>
 <br />
 <hr />
 
@@ -200,6 +200,26 @@
 <!-- End of .container -->
 
 <script>
+const checkSession = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/check-session');
+        const data = await response.json();
+        console.log(data);
+        if (data.sessionValid) {
+          console.log('working');
+          // Session is valid, continue with the current page logic
+        } else {
+          console.log('not working');
+          // Session is null or invalid, redirect to the login page
+          window.location.href = './Login.html';
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    checkSession(); // Call the function directly
+
 fetch('http://localhost:3000/user-policy-status-details')
       .then(response => response.json())
       .then(data => {
@@ -300,6 +320,25 @@ fetch('http://localhost:3000/checkDetails', {
   });
 
     }
+
+    const signOut = () => {
+  fetch('http://localhost:3000/sign-out', {
+    method: 'POST',
+  })
+    .then((response) => {
+      if (response.redirected) {
+
+        window.location.href = './Home1.html';
+      } else {
+        // Handle other responses
+        // ...
+      }
+    })
+    .catch((error) => {
+      console.error('Failed to sign out:', error);
+    });
+};
+
 </script>
 </body>
 </html>
