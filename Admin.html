@@ -207,11 +207,10 @@ const checkSession = async () => {
         console.log(data);
         if (data.sessionValid) {
           console.log('working');
-          // Session is valid, continue with the current page logic
         } else {
           console.log('not working');
           // Session is null or invalid, redirect to the login page
-          // window.location.href = './Login.html';
+          window.location.href = './Login.html';
         }
       } catch (error) {
         console.log(error);
@@ -328,7 +327,7 @@ fetch('http://localhost:3000/checkDetails', {
     .then((response) => {
       if (response.redirected) {
 
-        window.location.href = './Home1.html';
+        window.location.href = './Login.html';
       } 
     })
     .catch((error) => {

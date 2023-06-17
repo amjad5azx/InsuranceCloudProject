@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agent</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
-<body>
-    <!-- Optional JavaScript; choose one of the two! -->
+<body style="background-color:#E5E4E2;">
+ <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -20,65 +21,65 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-
-    <div align="center">
-        <h1 align="center">User Policies</h1>
-        <label for="usertxt">Enter Username:</label>
-        <br />
-        <input type="text" id="usertxt" class="form-control" />
-        <br />
-        <button id="approvePolicy" class="btn btn-success" onclick="ApprovePolicy()">Approve Policy</button>
-        <br />
-        <br />
-        <label id="Label1" style="color: red;display:none;">No User Found</label>
-        <br />
-        <br />
-        <hr />
-        <br />
-        <button id="SignOut" class="btn btn-success" onclick="signOut()">Sign Out</button>
-        <br />
-        <br />
-        <hr />
-        <br />
-        <h2>Inactive User Policies</h2>
-        <table class="table" id="inactiveUsersTable">
-          <thead>
-            <tr>
-              <th>user_id</th>
-              <th>name</th>
-              <th>username</th>
-              <th>nominee_id</th>
-              <th>nominee_name</th>
-              <th>policy_type_id</th>
-              <th>policy_type_name</th>
-              <th>policy_status</th>
-            </tr>
-          </thead>
-          <tbody id="GridView1">
-            <!-- Rows will be dynamically generated -->
-          </tbody>
-        </table>
-        <br />
-        <hr />
-        <h2>Active User Policies</h2>
-        <table class="table" id="activeUsersTable">
-          <thead>
-            <tr>
-              <th>user_id</th>
-              <th>name</th>
-              <th>username</th>
-              <th>nominee_id</th>
-              <th>nominee_name</th>
-              <th>policy_type_id</th>
-              <th>policy_type_name</th>
-              <th>policy_status</th>
-            </tr>
-          </thead>
-          <tbody id="GridView2">
-            <!-- Rows will be dynamically generated -->
-          </tbody>
-        </table>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" " >
+  <a class="navbar-brand" href="#" style="font-size:30px;color:white;font-weight:bold;">   Your Insurance</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item active">
+        <a class="nav-link" style="color:white;" href="./Profile.html">Profile</a>
+      </li>
+         
+      <li class="nav-item">
+        <a class="nav-link" href="./Policy_Detail.html">Policy Detail</a>
+      </li>
+        <li class="nav-item ">
+        <a class="nav-link"  href="./Update.html">Setting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <div class="container" >
+<div class="row" style="padding: 50px;">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="card">
+      <img class="card-img-top" src="1887291.jpg" alt="Bologna">
+      <div class="card-body text-center">
+        <img class="avatar rounded-circle" src="profile-icon-png-909.png" alt="Bologna" style="border: 0.3rem solid rgba(#fff, 0.3);
+        margin-top: -6rem;
+        margin-bottom: 1rem;
+        max-width: 9rem;">
+        <br>
+        <label for="nameid" style="font-weight: bold;">Name: </label>
+        <label id="nametct">Label</label>
+        <br>
+        <br>
+        <label for="addressid" style="font-weight: bold;">Address: </label>
+        <label id="addresstxt">Label</label>
+        <br>
+        <br>
+        <label for="citytxt" style="font-weight: bold;">City: </label>
+        <label id="citytxt">Label</label>
+        <br>
+        <br>
+        <label for="nomineename" style="font-weight: bold;">Nominee: </label>
+        <label id="nomineetxt">Label</label>
+        <br>
+        <br>
+        <label for="ph_no" style="font-weight: bold;">Ph-No: </label>
+        <label id="phtxt">Label</label>
+        <br>
+        <br>
+        <input type="button" id="Button1" class="btn btn-outline-info" value="Sign Out" onclick="signOut()" />
       </div>
+    </div>
+  </div>
+</div>
+</div>  
+
+
 
     <!-- footer -->
 <div class=" row ">
@@ -173,8 +174,9 @@
   </div>
 </div>
 <!-- End of .container -->
-</body>
+
 <script>
+
 const checkSession = async () => {
       try {
         const response = await fetch('http://localhost:3000/check-session');
@@ -192,78 +194,33 @@ const checkSession = async () => {
       }
     };
 
-    checkSession();
+    checkSession(); 
 
-    fetch('http://localhost:3000/user-policy-status-details')
-      .then(response => response.json())
-      .then(data => {
-        const tableBody = document.getElementById('inactiveUsersTable');
-        data.forEach(row => {
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
-              <td>${row.user_id}</td>
-              <td>${row.name}</td>
-              <td>${row.username}</td>
-              <td>${row.nominee_id}</td>
-              <td>${row.nominee_name}</td>
-              <td>${row.policy_type_id}</td>
-              <td>${row.policy_type_name}</td>
-              <td>${row.policy_status}</td>
-            `;
-            tableBody.appendChild(newRow);
-        });
-      }).catch(error => console.log(error));
+  async function fetchUserProfile() {
+    try {
+      const response = await fetch('http://localhost:3000/profile');
+      const data = await response.json();
 
-      fetch('http://localhost:3000/active-users-policies-details')
-      .then(response => response.json())
-      .then(data => {
-        const tableBody = document.getElementById('activeUsersTable');
-        data.forEach(row => {
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
-              <td>${row.user_id}</td>
-              <td>${row.name}</td>
-              <td>${row.username}</td>
-              <td>${row.nominee_id}</td>
-              <td>${row.nominee_name}</td>
-              <td>${row.policy_type_id}</td>
-              <td>${row.policy_type_name}</td>
-              <td>${row.policy_status}</td>
-            `;
-            tableBody.appendChild(newRow);
-        });
-      }).catch(error => console.log(error));
+      // Access the user profile data
+      const { name, address, nominee, phone, password, city } = data;
+      console.log(city);
+      // Update the DOM with the profile data
+      document.getElementById('nametct').textContent = name;
+      document.getElementById('addresstxt').textContent = address;
+      document.getElementById('nomineetxt').textContent = nominee;
+      document.getElementById('phtxt').textContent = phone;
+      console.log(city);
+      document.getElementById('citytxt').textContent = city
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 
-const ApprovePolicy=()=>{
-    const usertxt = document.getElementById('usertxt').value; // Replace with the actual username value
-    console.log(usertxt)
-    fetch('http://localhost:3000/activate-policy', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ usertxt }),
-    })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          console.log(response.status);
-        }
-      })
-      .then(data => {
-        if(data.message==="no user found"){
-            window.alert(""+data.message)
-            console.log("nO USER"+data.message);
-        }
-        console.log(data.message); 
-      })
-      .catch(error => {
-        console.error('Request failed:', error);
-      });
-}
+  // Call the async function to fetch and display the user profile
+  fetchUserProfile();
 
-const signOut = () => {
+
+  const signOut = () => {
   fetch('http://localhost:3000/sign-out', {
     method: 'POST',
   })
@@ -278,6 +235,6 @@ const signOut = () => {
     });
 };
 
-
 </script>
-</html>
+
+</body>

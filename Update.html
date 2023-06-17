@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body style="background-color:#E5E4E2;">
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark" >
+        <a class="navbar-brand" href="#" style="font-size:30px;color:white;font-weight:bold;">   Your Insurance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+              <a class="nav-link"  href="./Profile.html">Profile</a>
+            </li>
+               
+            <li class="nav-item">
+              <a class="nav-link" href="./Policy_Detail.html">Policy Detail</a>
+            </li>
+              <li class="nav-item ">
+              <a class="nav-link"  style="color:white;" href="./Update.html">Setting</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container" >
+      <div class="row" style="height: auto; display: flex; align-items: center; justify-content: center; margin: 20px;">
+        <div class="col-md-6" style="background-color: white; padding: 10px;">
+            <h1 style="font-size: 50px;">Update Info</h1>
+            <br>
+            <hr>
+            <br>
+            <label for="name_txt" style="font-weight: bold;">Update Name</label>
+            <br>
+            <input class="form-control" type="text" id="name_txt" >
+            <br>
+            <button id="UpdateName" class="btn btn-success" onclick="updateName()">Update Name</button>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <label for="passtxt" style="font-weight: bold;">Update Password</label>
+            <br>
+            <input class="form-control" type="password" id="passtxt" >
+            <br>
+            <button id="UpdatePassword" class="btn btn-success" onclick="updatePassword()">Update Password</button>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <label for="phone_txt" style="font-weight: bold;">Update Phone No.</label>
+            <br>
+            <input class="form-control" type="number" id="phone_txt" >
+            <br>
+            <button id="UpdatePhone" class="btn btn-success" onclick="updatePhone()">Update Phone no.</button>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <label for="citytxt" style="font-weight: bold;">Update City</label>
+            <br>
+            <input class="form-control" type="text" id="citytxt" >
+            <br>
+            <button id="UpdateCity" class="btn btn-success" onclick="updateCity()">Update City</button>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <label for="addresstxt" style="font-weight: bold;" >Update Address</label>
+            <br>
+            <input class="form-control" type="text" id="addresstxt" >
+            <br>
+            <button id="UpdateAddress" class="btn btn-success" onclick="updateAddress()">Update Address</button>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <label for="nomineetxt" style="font-weight: bold;">Update Nominee</label>
+            <br>
+            <input class="form-control" type="text" id="nomineetxt" >
+            <br>
+            <button id="UpdateNominee" class="btn btn-success" onclick="updateNominee()">Update Nominee</button>
+            <br>
+        </div>
+      </div>
+      </div>
+      
+
+      
+      <!-- footer -->
+<div class=" row ">
+    <div class="col-md-12 pr-0 pl-0">
+  <footer class="text-white text-center text-lg-start " style="background-color: #23242a;">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row mt-4">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">About company</h5>
+
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+            voluptatum deleniti atque corrupti.
+          </p>
+
+          <p>
+            Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+            molestias.
+          </p>
+
+          <div class="mt-4">
+            <!-- Facebook -->
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-facebook-f"></i></a>
+            <!-- Dribbble -->
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-dribbble"></i></a>
+            <!-- Twitter -->
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
+            <!-- Google + -->
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-google-plus-g"></i></a>
+            <!-- Linkedin -->
+          </div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+
+          <ul class="fa-ul" style="margin-left: 1.65em;">
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY 10012, US</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@example.com</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567 88</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 01 234 567 89</span>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+          <table class="table text-center text-white">
+            <tbody class="font-weight-normal">
+              <tr>
+                <td>Mon - Thu:</td>
+                <td>8am - 9pm</td>
+              </tr>
+              <tr>
+                <td>Fri - Sat:</td>
+                <td>8am - 1am</td>
+              </tr>
+              <tr>
+                <td>Sunday:</td>
+                <td>9am - 10pm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdChamp.com/">Yourinsurance.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  </div>
+</div>
+<!-- End of .container -->
+
+<script>
+    
+    const updateName = async () => {
+    const nameInput = document.getElementById('name_txt');
+    const newName = nameInput.value;
+
+    if (!newName) {
+        alert('Insert Name')
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3000/update-name', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: newName }),
+      });
+
+      if (response.ok) {
+        document.getElementById('name_txt').value=""
+        console.log('Name updated successfully');
+      } 
+    } catch (error) {
+      // Handle error
+      console.error(error);
+    }
+  };
+
+  const updatePassword = async () => {
+    const passwordInput = document.getElementById('passtxt');
+    const newPassword = passwordInput.value;
+
+    if (!newPassword) {
+        alert('Insert Password')
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3000/update-password', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ password: newPassword }),
+      });
+
+      if (response.ok) {
+        document.getElementById('passtxt').value=''
+        console.log('Password updated successfully');
+      } else {
+        // Handle other response statuses if needed
+      }
+    } catch (error) {
+      // Handle error
+      console.error(error);
+    }
+  };
+
+  const updateCity = async () => {
+  const cityInput = document.getElementById('citytxt');
+  const newCity = cityInput.value;
+
+  if (!newCity) {
+    alert('Insert City')
+    return;
+  }
+
+  try {
+    const response = await fetch('http://localhost:3000/update-city', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ city: newCity }),
+    });
+
+    if (response.ok) {
+      cityInput.value=''
+      console.log('City updated successfully');
+    } else {
+      // Handle other response statuses if needed
+    }
+  } catch (error) {
+    // Handle error
+    console.error(error);
+  }
+};
+
+const updateAddress = async () => {
+  const addressInput = document.getElementById('addresstxt');
+  const newAddress = addressInput.value;
+
+  if (!newAddress) {
+    alert('Insert Address')
+    return;
+  }
+
+  try {
+    const response = await fetch('http://localhost:3000/update-address', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ address: newAddress }),
+    });
+
+    if (response.ok) {
+        addressInput.value=''
+      console.log('Address updated successfully');
+    } 
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const updatePhone = async () => {
+  const phoneInput = document.getElementById('phone_txt');
+  const newPhone = phoneInput.value;
+
+  if (!newPhone) {
+    alert('Insert Phone No')
+    return;
+  }
+
+  try {
+    const response = await fetch('http://localhost:3000/update-phone', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ phone: newPhone }),
+    });
+
+    if (response.ok) {
+        phoneInput.value=''
+      console.log('Phone number updated successfully');
+    } else {
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const updateNominee = async () => {
+  const nomineeInput = document.getElementById('nomineetxt');
+  const nomineeName = nomineeInput.value;
+
+  if (!nomineeName) {
+    alert('Insert Nominee')
+    return;
+  }
+
+  try {
+    const response = await fetch('http://localhost:3000/update-nominee', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ nominee: nomineeName }),
+    });
+
+    if (response.ok) {
+        nomineeInput.value=''
+      console.log('Nominee name updated successfully');
+    } else {
+      const errorData = await response.json();
+      console.log(errorData.error);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const checkSession = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/check-session');
+        const data = await response.json();
+        console.log(data);
+        if (data.sessionValid) {
+          console.log('working');
+        } else {
+          console.log('not working');
+          window.location.href = './Login.html';
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    checkSession(); 
+</script>
+</body>
