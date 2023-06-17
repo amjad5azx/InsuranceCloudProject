@@ -255,8 +255,11 @@ const ApprovePolicy=()=>{
         if(data.message==="no user found"){
             window.alert(""+data.message)
             console.log("nO USER"+data.message);
+            return
         }
+        document.getElementById('usertxt').value=''
         console.log(data.message); 
+        window.alert("Policy Activated")
       })
       .catch(error => {
         console.error('Request failed:', error);

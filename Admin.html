@@ -307,6 +307,7 @@ fetch('http://localhost:3000/checkDetails', {
     if (data.message === 'No User exists') {
       const label = document.getElementById('Label1');
       label.textContent = 'No user found';
+      return
     } else {
       const label = document.getElementById('Label1');
       label.textContent = '';
@@ -315,6 +316,7 @@ fetch('http://localhost:3000/checkDetails', {
       document.getElementById('premium_amount').textContent = data['Premium Amount'];
       document.getElementById('status').textContent = data['Policy Status'];
       document.getElementById('pnameid').textContent = data['Policy Name'];
+      document.getElementById('usertxt').value=''
     }
   });
 
