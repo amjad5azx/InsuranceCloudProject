@@ -186,7 +186,7 @@
 
 const checkSession = async () => {
       try {
-        const response = await fetch('http://localhost:3000/check-session');
+        const response = await fetch('https://filthy-cyan-singlet.cyclic.app/check-session');
         const data = await response.json();
         console.log(data);
         if (data.sessionValid) {
@@ -204,7 +204,7 @@ const checkSession = async () => {
     
     async function fetchUserPolicy() {
       try {
-        const response = await fetch('http://localhost:3000/user-policy');
+        const response = await fetch('https://filthy-cyan-singlet.cyclic.app/user-policy');
         const data = await response.json();
   
         // Access the user policy data
@@ -228,7 +228,7 @@ const checkSession = async () => {
     fetchUserPolicy();
 
     function PayPremium() {
-  fetch('http://localhost:3000/pay-premium', {
+  fetch('https://filthy-cyan-singlet.cyclic.app/pay-premium', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -246,7 +246,7 @@ const checkSession = async () => {
 }
 
 function Claim() {
-  fetch('http://localhost:3000/claim-policy', {
+  fetch('https://filthy-cyan-singlet.cyclic.app/claim-policy', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

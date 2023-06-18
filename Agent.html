@@ -177,7 +177,7 @@
 <script>
 const checkSession = async () => {
       try {
-        const response = await fetch('http://localhost:3000/check-session');
+        const response = await fetch('https://filthy-cyan-singlet.cyclic.app/check-session');
         const data = await response.json();
         console.log(data);
         if (data.sessionValid) {
@@ -194,7 +194,7 @@ const checkSession = async () => {
 
     checkSession();
 
-    fetch('http://localhost:3000/user-policy-status-details')
+    fetch('https://filthy-cyan-singlet.cyclic.app/user-policy-status-details')
       .then(response => response.json())
       .then(data => {
         const tableBody = document.getElementById('inactiveUsersTable');
@@ -214,7 +214,7 @@ const checkSession = async () => {
         });
       }).catch(error => console.log(error));
 
-      fetch('http://localhost:3000/active-users-policies-details')
+      fetch('https://filthy-cyan-singlet.cyclic.app/active-users-policies-details')
       .then(response => response.json())
       .then(data => {
         const tableBody = document.getElementById('activeUsersTable');
@@ -237,7 +237,7 @@ const checkSession = async () => {
 const ApprovePolicy=()=>{
     const usertxt = document.getElementById('usertxt').value; // Replace with the actual username value
     console.log(usertxt)
-    fetch('http://localhost:3000/activate-policy', {
+    fetch('https://filthy-cyan-singlet.cyclic.app/activate-policy', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -260,6 +260,7 @@ const ApprovePolicy=()=>{
         document.getElementById('usertxt').value=''
         console.log(data.message); 
         window.alert("Policy Activated")
+        window.location.href = './Agent.html';
       })
       .catch(error => {
         console.error('Request failed:', error);
@@ -267,7 +268,7 @@ const ApprovePolicy=()=>{
 }
 
 const signOut = () => {
-  fetch('http://localhost:3000/sign-out', {
+  fetch('https://filthy-cyan-singlet.cyclic.app/sign-out', {
     method: 'POST',
   })
     .then((response) => {
